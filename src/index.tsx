@@ -1,19 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import shipmentFormRoutes from 'modules/shipment-form/config/routes'
+import { ErrorBoundary, Page404 } from 'shared/components'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import renderRoutesRecursive from 'utils/renderRoutesRecursive'
+import './assets/styles/global.scss'
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+const ROUTES = [shipmentFormRoutes]
+
+const App = () => {
+  return (
+    <ErrorBoundary>
+      <Routes>
+        {ROUTES.map((arrayOfRoutes, index) =>
+          renderRoutesRecursive(arrayOfRoutes, `group-${index}`)
+        )}
+        <Route path='*' element={<Page404 />} />
+      </Routes>
+    </ErrorBoundary>
+  )
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
-  <React.StrictMode>
+  <Router>
     <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  </Router>
+)
