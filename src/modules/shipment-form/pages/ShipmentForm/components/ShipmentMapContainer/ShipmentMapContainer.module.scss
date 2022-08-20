@@ -1,0 +1,10 @@
+.root {
+  & > h3 {
+    display: flex;
+    justify-content: center;
+  }
+}
+.wrapper {
+  box-sizing: border-box;
+  padding: 20px;
+}
