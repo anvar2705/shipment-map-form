@@ -1,0 +1,25 @@
+@import "assets/styles/variables.module";
+
+.root {
+  position: relative;
+  & > h3 {
+    display: flex;
+    justify-content: center;
+  }
+}
+.wrapper {
+  box-sizing: border-box;
+  padding: 20px;
+}
+.helperText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: $color-white;
+  border-radius: $border-radius-base*2;
+  box-sizing: border-box;
+  padding: 20px;
+  z-index: 100000;
+  font-size: 20px;
+}

@@ -1,14 +1,40 @@
 import { IShipment } from 'modules/shipment-form/pages/ShipmentForm/ShipmentForm.types'
 
 export const SHIPMENTS: IShipment[] = [
-  { key: 0, name: 'F01', pointA: 'some1', pointB: 'some2' },
-  { key: 1, name: 'F01', pointA: 'some1', pointB: 'some2' },
-  { key: 2, name: 'F02', pointA: 'some1', pointB: 'some2' },
-  { key: 3, name: 'F03', pointA: 'some1', pointB: 'some2' },
-  { key: 4, name: 'F04', pointA: 'some1', pointB: 'some2' },
-  { key: 5, name: 'F05', pointA: 'some1', pointB: 'some2' },
-  { key: 6, name: 'F06', pointA: 'some1', pointB: 'some2' },
-  { key: 7, name: 'F07', pointA: 'some1', pointB: 'some2' },
-  { key: 8, name: 'F08', pointA: 'some1', pointB: 'some2' },
-  { key: 9, name: 'F09', pointA: 'some1', pointB: 'some2' },
+  {
+    key: 125,
+    name: 'Заявка 1',
+    pointA: {
+      lat: 46.372037,
+      lng: 48.074875,
+    },
+    pointB: {
+      lat: 46.349469,
+      lng: 48.034101,
+    },
+  },
+  {
+    key: 321,
+    name: 'Заявка 2',
+    pointA: {
+      lat: 46.366494,
+      lng: 48.029062,
+    },
+    pointB: {
+      lat: 46.352751,
+      lng: 48.075957,
+    },
+  },
+  {
+    key: 389,
+    name: 'Заявка 3',
+    pointA: {
+      lat: 46.343035,
+      lng: 48.063646,
+    },
+    pointB: {
+      lat: 46.37668,
+      lng: 48.04719,
+    },
+  },
 ]

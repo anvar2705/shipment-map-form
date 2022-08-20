@@ -1,5 +1,5 @@
 import ShipmentTable from './ShipmentTable/ShipmentTable'
-import ShipmentMapContainer from './ShipmentMapContainer/ShipmentMapContainer'
+import ShipmentMapWrapper from './ShipmentMapWrapper/ShipmentMapWrapper'
 import Map from './Map/Map'
 
-export { ShipmentTable, ShipmentMapContainer, Map }
+export { ShipmentTable, ShipmentMapWrapper, Map }
