@@ -3,11 +3,13 @@ import { MainLayout } from 'shared/layouts'
 import s from './ShipmentForm.module.scss'
 import { ShipmentTable, ShipmentMapWrapper } from './components'
 import normalizeValue from 'utils/normalizeValue'
+import useHorizontalScroll from 'shared/hooks/useHorizontalScroll'
 
 const ShipmentForm = () => {
   const [isDrag, setIsDrag] = useState(false)
   const [mapWidth, setMapWidth] = useState<null | number>(null)
   const [cursor, setCursor] = useState<'auto' | 'ew-resize'>('auto')
+  const tableRef = useHorizontalScroll()
 
   const startDrag = () => {
     setIsDrag(true)
@@ -45,7 +47,7 @@ const ShipmentForm = () => {
           <ShipmentMapWrapper />
         </div>
         <div className={s.dragBar} onMouseDown={startDrag}></div>
-        <div className={s.section}>
+        <div className={s.section} ref={tableRef}>
           <ShipmentTable />
         </div>
       </div>
