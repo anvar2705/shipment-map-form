@@ -1,7 +1,14 @@
+@import 'assets/styles/variables.module';
+
 .root {
   display: flex;
-
-  & > div {
-    width: 50%;
-  }
+}
+.section {
+  width: 100%;
+}
+.dragBar {
+  width: 6px;
+  background-color: $color-grey-500;
+  cursor: ew-resize;
+  flex-shrink: 0;
 }

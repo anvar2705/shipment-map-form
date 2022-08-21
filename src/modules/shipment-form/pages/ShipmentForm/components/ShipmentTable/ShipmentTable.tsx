@@ -46,7 +46,7 @@ const ShipmentTable = () => {
   }
 
   return (
-    <div>
+    <div className={s.root}>
       <h3 className={s.title}>Таблица отгрузок</h3>
       <Table
         dataSource={SHIPMENTS}

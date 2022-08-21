@@ -2,6 +2,7 @@ import React from 'react'
 import { MapContainer, TileLayer } from 'react-leaflet'
 import './Map.scss'
 import Routing from './Routing'
+import ResizeMap from './ResizeMap'
 
 const Map = () => {
   return (
@@ -11,6 +12,7 @@ const Map = () => {
         url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
       />
       <Routing />
+      <ResizeMap />
     </MapContainer>
   )
 }

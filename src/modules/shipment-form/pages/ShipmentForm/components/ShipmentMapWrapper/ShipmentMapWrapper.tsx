@@ -10,9 +10,7 @@ const ShipmentMapWrapper = () => {
     <div className={s.root}>
       <h3>Карта</h3>
       {selected === null && <div className={s.helperText}>Пожалуйста, выберите заявку</div>}
-      <div className={s.wrapper}>
-        <Map />
-      </div>
+      <Map />
     </div>
   )
 }
