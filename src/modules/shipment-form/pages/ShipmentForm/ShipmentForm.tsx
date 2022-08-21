@@ -23,7 +23,7 @@ const ShipmentForm = () => {
 
   const drag = (event: MouseEvent<HTMLDivElement>) => {
     if (isDrag) {
-      setMapWidth(normalizeValue(event.clientX - 30, 220, window.innerWidth - 400))
+      setMapWidth(normalizeValue(event.clientX - 30, 400, window.innerWidth - 400))
       event.preventDefault()
     }
   }
@@ -39,16 +39,17 @@ const ShipmentForm = () => {
       >
         <div
           className={s.section}
+          ref={tableRef}
           style={{
             width: mapWidth ? `${mapWidth}px` : undefined,
             minWidth: mapWidth ? `${mapWidth}px` : undefined,
           }}
         >
-          <ShipmentMapWrapper />
+          <ShipmentTable />
         </div>
         <div className={s.dragBar} onMouseDown={startDrag}></div>
-        <div className={s.section} ref={tableRef}>
-          <ShipmentTable />
+        <div className={s.section}>
+          <ShipmentMapWrapper />
         </div>
       </div>
     </MainLayout>
