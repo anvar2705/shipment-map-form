@@ -2,29 +2,39 @@ import React, { MouseEvent, useState } from 'react'
 import { MainLayout } from 'shared/layouts'
 import s from './ShipmentForm.module.scss'
 import { ShipmentTable, ShipmentMapWrapper } from './components'
+import normalizeValue from 'utils/normalizeValue'
 
 const ShipmentForm = () => {
   const [isDrag, setIsDrag] = useState(false)
   const [mapWidth, setMapWidth] = useState<null | number>(null)
+  const [cursor, setCursor] = useState<'auto' | 'ew-resize'>('auto')
 
   const startDrag = () => {
     setIsDrag(true)
+    setCursor('ew-resize')
   }
 
   const endDrag = () => {
     setIsDrag(false)
+    setCursor('auto')
   }
 
   const drag = (event: MouseEvent<HTMLDivElement>) => {
     if (isDrag) {
-      setMapWidth(event.clientX - 30)
+      setMapWidth(normalizeValue(event.clientX - 30, 220, window.innerWidth - 400))
       event.preventDefault()
     }
   }
 
   return (
     <MainLayout>
-      <div className={s.root} onMouseUp={endDrag} onMouseLeave={endDrag} onMouseMove={drag}>
+      <div
+        className={s.root}
+        onMouseUp={endDrag}
+        onMouseLeave={endDrag}
+        onMouseMove={drag}
+        style={{ cursor }}
+      >
         <div
           className={s.section}
           style={{
