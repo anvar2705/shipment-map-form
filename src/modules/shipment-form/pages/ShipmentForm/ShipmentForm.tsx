@@ -7,9 +7,9 @@ import useHorizontalScroll from 'shared/hooks/useHorizontalScroll'
 
 const ShipmentForm = () => {
   const [isDrag, setIsDrag] = useState(false)
-  const [mapWidth, setMapWidth] = useState<null | number>(null)
+  const [mapWidth, setMapWidth] = useState<number>(0)
   const [cursor, setCursor] = useState<'auto' | 'ew-resize'>('auto')
-  const tableRef = useHorizontalScroll()
+  const tableRef = useHorizontalScroll(mapWidth > 620 || mapWidth === 0)
 
   const startDrag = () => {
     setIsDrag(true)

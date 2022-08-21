@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react'
 
-const useHorizontalScroll = () => {
+const useHorizontalScroll = (disable?: boolean) => {
   const elRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
     const el = elRef.current
-    if (el) {
+    if (el && !disable) {
       const onWheel = (event: WheelEvent) => {
         if (event.deltaY === 0) return
         event.preventDefault()
@@ -15,7 +15,7 @@ const useHorizontalScroll = () => {
       el.addEventListener('wheel', onWheel)
       return () => el.removeEventListener('wheel', onWheel)
     }
-  }, [])
+  }, [disable])
   return elRef
 }
 
