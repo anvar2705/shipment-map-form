@@ -15,23 +15,23 @@ const renderCoordinates = (value: IPointCoordinates) => (
 
 const columns: ColumnsType<IShipment> = [
   {
-    title: 'Id',
+    title: '№',
     dataIndex: 'key',
     key: 'key',
   },
   {
-    title: 'Name',
+    title: 'Название',
     dataIndex: 'name',
     key: 'name',
   },
   {
-    title: 'Point A',
+    title: 'Точка A',
     dataIndex: 'pointA',
     key: 'pointA',
     render: renderCoordinates,
   },
   {
-    title: 'Point B',
+    title: 'Точка B',
     dataIndex: 'pointB',
     key: 'pointB',
     render: renderCoordinates,
@@ -48,15 +48,17 @@ const ShipmentTable = () => {
   return (
     <div className={s.root}>
       <h3 className={s.title}>Таблица отгрузок</h3>
-      <Table
-        dataSource={SHIPMENTS}
-        columns={columns}
-        pagination={false}
-        rowSelection={{
-          type: 'radio',
-          onChange: onSelectRow,
-        }}
-      />
+      <div className={s.table}>
+        <Table
+          dataSource={SHIPMENTS}
+          columns={columns}
+          pagination={false}
+          rowSelection={{
+            type: 'radio',
+            onChange: onSelectRow,
+          }}
+        />
+      </div>
     </div>
   )
 }
