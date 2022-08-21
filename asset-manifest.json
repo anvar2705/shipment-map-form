@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/shipment-map-form/static/css/main.4e6d2b01.css",
+    "main.js": "/shipment-map-form/static/js/main.6176a2f6.js",
+    "static/media/page_404.png": "/shipment-map-form/static/media/page_404.a68631470df11f5520ac.png",
+    "static/media/Montserrat-Regular.ttf": "/shipment-map-form/static/media/Montserrat-Regular.3cd786652b8a2e9d41f2.ttf",
+    "static/media/Montserrat-Bold.ttf": "/shipment-map-form/static/media/Montserrat-Bold.079ca05d3ded9bc107ab.ttf",
+    "static/media/Montserrat-SemiBold.ttf": "/shipment-map-form/static/media/Montserrat-SemiBold.fa8441f345d83a0bc4ec.ttf",
+    "static/media/Montserrat-Medium.ttf": "/shipment-map-form/static/media/Montserrat-Medium.e2d60bc49517598c0ce8.ttf",
+    "static/media/Montserrat-Light.ttf": "/shipment-map-form/static/media/Montserrat-Light.02afb26fe72fcc052988.ttf",
+    "index.html": "/shipment-map-form/index.html",
+    "main.4e6d2b01.css.map": "/shipment-map-form/static/css/main.4e6d2b01.css.map",
+    "main.6176a2f6.js.map": "/shipment-map-form/static/js/main.6176a2f6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4e6d2b01.css",
+    "static/js/main.6176a2f6.js"
+  ]
+}
