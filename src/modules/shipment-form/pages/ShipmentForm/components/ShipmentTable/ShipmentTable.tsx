@@ -4,7 +4,7 @@ import { SHIPMENTS } from '_mocks/shipmentForm'
 import { Table } from 'antd'
 import { ColumnsType } from 'antd/es/table'
 import { IPointCoordinates, IShipment } from '../../ShipmentForm.types'
-import { useAppDispatch } from 'shared/hooks/redux'
+import { useAppDispatch, useAppSelector } from 'shared/hooks/redux'
 import { setShipment } from 'modules/shipment-form/store/slice'
 
 const renderCoordinates = (value: IPointCoordinates) => (
@@ -39,6 +39,7 @@ const columns: ColumnsType<IShipment> = [
 ]
 
 const ShipmentTable = () => {
+  const { selected } = useAppSelector((state) => state.shipmentFormReducer)
   const dispatch = useAppDispatch()
 
   const onSelectRow = (selectedRowKeys: React.Key[], selectedRows: IShipment[]) => {
@@ -55,7 +56,15 @@ const ShipmentTable = () => {
           pagination={false}
           rowSelection={{
             type: 'radio',
+            selectedRowKeys: selected ? [selected.key] : [],
             onChange: onSelectRow,
+          }}
+          onRow={(record) => {
+            return {
+              onClick: () => {
+                dispatch(setShipment(record))
+              },
+            }
           }}
         />
       </div>
