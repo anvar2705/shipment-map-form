@@ -3,7 +3,7 @@ import { ShipmentForm } from '../pages'
 
 const ROUTES: IRoute[] = [
   {
-    path: '/',
+    path: '/shipment-map-form',
     element: <ShipmentForm />,
   },
 ]
